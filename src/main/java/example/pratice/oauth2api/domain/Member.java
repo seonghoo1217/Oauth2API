@@ -1,11 +1,8 @@
 package example.pratice.oauth2api.domain;
 
-import lombok.Getter;
-
 import javax.persistence.*;
 
 @Entity
-@Getter
 public class Member {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -42,6 +39,41 @@ public class Member {
 		this.name = name;
 		this.email = email;
 		this.imageUrl = imageUrl;
+		return this;
+	}
+
+	public String getRoleKey() {
+		return this.role.getKey();
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public String getOauthId() {
+		return oauthId;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public String getImageUrl() {
+		return imageUrl;
+	}
+
+	public Role getRole() {
+		return role;
+	}
+
+	public Member UpdateMember(String name,String email,String imageUrl){
+		this.name=name;
+		this.email=email;
+		this.imageUrl=imageUrl;
 		return this;
 	}
 }
