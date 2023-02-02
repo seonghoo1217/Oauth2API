@@ -6,4 +6,13 @@ spring:
           github:
             client-id: 5b3c8931560d04387997
             client-secret : 5e6b461f457ef757c6df42a68d40bd172a1a8fe1
-            scope: name,email,avatar_url
+            scope: user
+            redirectUri: {baseUrl}/oauth2/callback/{registrationId}
+
+app:
+  auth:
+    token:
+      secret-key: 6B64DCA4E72F58EDIKU9AAB215FE7
+      refresh-cookie-key: refresh
+  oauth2:
+    authorizationRedirectUri: http://localhost:3000/oauth2/redirect
