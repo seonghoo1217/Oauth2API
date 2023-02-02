@@ -1,5 +1,7 @@
 package example.pratice.oauth2api.domain;
 
+import lombok.Builder;
+
 import javax.persistence.*;
 
 @Entity
@@ -78,7 +80,7 @@ public class Member {
 
 	private String refreshToken;
 
-
+	@Builder
 	public Member UpdateMember(String name,String email,String imageUrl){
 		this.name=name;
 		this.email=email;
