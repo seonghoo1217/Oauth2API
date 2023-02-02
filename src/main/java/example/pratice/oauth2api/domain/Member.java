@@ -66,9 +66,18 @@ public class Member {
 		return imageUrl;
 	}
 
+	@Enumerated(EnumType.STRING)
 	public Role getRole() {
 		return role;
 	}
+
+	@Enumerated(EnumType.STRING)
+	public AuthProvider authProvider;
+
+	private String githubUrl;
+
+	private String refreshToken;
+
 
 	public Member UpdateMember(String name,String email,String imageUrl){
 		this.name=name;
